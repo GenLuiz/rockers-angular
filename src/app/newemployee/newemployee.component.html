@@ -1,0 +1,61 @@
+<div class="container">
+  <form class="form-horizontal" action="/success">
+    <fieldset>
+      <legend>Register</legend>
+
+      <div class="form-group">
+        <label for="inputName" class="col-lg-2 control-label">Name:</label>
+        <div class="col-md-10">
+          <input class="form-control" id="inputName" placeholder="Name" type="text" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputWiproId" class="col-lg-2 control-label">Wipro Id:</label>
+        <div class="col-md-10">
+          <input class="form-control" id="inputWiproId" placeholder="Wipro Id ex:aa123456" type="text" required pattern="[a-zA-Z]{2}[0-9]{6}">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputMCId" class="col-lg-2 control-label">MC Id:</label>
+        <div class="col-md-10">
+          <input class="form-control" id="inputMCId" placeholder="MC Id ex:a1234567" type="text" pattern="[a-zA-Z]{1}[0-9]{7}">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputWiproMail" class="col-lg-2 control-label">Wipro Email:</label>
+        <div class="col-md-10">
+          <input class="form-control" id="inputWiproMail" placeholder="Wipro Email ex:aa123456@wipro.com" type="text" required pattern="[a-zA-Z]{2}[0-9]{6}@wipro.com">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputTeam" class="col-lg-2 control-label">Team:</label>
+        <div class="col-md-10">
+          <input class="form-control" id="inputTeam" placeholder="Team" type="text">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="selectContract" class="col-lg-2 control-label">Contract:</label>
+        <div class="col-md-10">
+          <select class="form-control" id="selectContract">
+            <option disabled>Select Contract</option>
+            <option value="ESS">ESS</option>
+            <option value="COMMERCIAL">Commercial</option>
+            <option value="NONCOMMERCIAL">Non-Commercial</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-12">
+          <button type="reset" class="btn btn-default">Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
