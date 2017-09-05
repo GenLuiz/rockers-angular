@@ -8,10 +8,11 @@ import { Output } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   
-  logged : boolean = false;
+  logged : boolean;
   constructor() { }
 
   ngOnInit() {
+    this.logged = false;
   }
 
   login(){

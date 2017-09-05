@@ -8,9 +8,11 @@ import { Employee } from '../employee/employee';
 @Injectable()
 export class EmployeeService {
 
-    private employeeUrl = '/employee';  // URL to web api
-  
-    constructor(private http: Http) { }
+    private employeeUrl = 'http://localhost:8585/rockers-api/employee';  // URL to web api
+    private headers = new Headers({'Content-Type': 'application/json'});
+    private http: Http;
+    
+    constructor() { }
 
     private handleError(error: any): Promise<any> {
         console.error('An error occurred', error);
@@ -27,7 +29,14 @@ export class EmployeeService {
     getEmployee(id: number): Promise<Employee> {
         const url = `${this.employeeUrl}/${id}`;
         return this.http.get(url).toPromise()
-            .then(response => response.json().data as Employee)
+            .then(response => response.json() as Employee)
             .catch(this.handleError);
+    }
+
+    createEmployee(employee:Employee):Promise<string>{
+        return this.http.post(this.employeeUrl, JSON.stringify(employee), {headers: this.headers})
+        .toPromise()
+        .then(response => response.json() as string)
+        .catch(this.handleError)
     }
 }

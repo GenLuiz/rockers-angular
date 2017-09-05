@@ -2,24 +2,26 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoginComponent } from './login.component';
 
-describe('LoginComponent', () => {
+fdescribe('LoginComponent', () => {
   let component: LoginComponent;
-  let fixture: ComponentFixture<LoginComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ LoginComponent ]
-    })
-    .compileComponents();
-  }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoginComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = new LoginComponent;
+    component.ngOnInit();
   });
 
-  it('should be created', () => {
-    expect(component).toBeTruthy();
+  it('should instantiate logged var', () => {
+    expect(component.logged).toBeDefined();
+    expect(component.logged).toBeFalsy();
+  });
+
+  it('should change logged var to true', () => {
+    component.login();
+    expect(component.logged).toBeTruthy();
+  });
+
+  it('should change logged var to false', () => {
+    component.logout();
+    expect(component.logged).toBeFalsy();
   });
 });

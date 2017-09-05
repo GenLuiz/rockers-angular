@@ -1,25 +1,23 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { NewemployeeComponent } from './newemployee.component';
 
-describe('NewemployeeComponent', () => {
+fdescribe('NewemployeeComponent', () => {
   let component: NewemployeeComponent;
-  let fixture: ComponentFixture<NewemployeeComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ NewemployeeComponent ]
-    })
-    .compileComponents();
-  }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewemployeeComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = new NewemployeeComponent;
   });
 
-  it('should be created', () => {
+  it('should be created the component', () => {
     expect(component).toBeTruthy();
   });
+
+  it('object employee should be undefined',() =>{
+    expect(component.employee).toBeUndefined();
+  });
+
+  it('after ngOnInit object employee should be defined',() =>{
+    component.ngOnInit();
+    expect(component.employee).toBeDefined();
+  });
+  
 });

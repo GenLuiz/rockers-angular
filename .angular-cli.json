@@ -6,7 +6,7 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "../rockers-api-parent/rockers-api-service/src/main/resources/public",
+      "outDir": "dist",
       "assets": [
         "assets",
         "favicon.ico"
